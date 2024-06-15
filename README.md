@@ -36,6 +36,20 @@ print(search_results)
 - `query` (str): The search query to be performed.
 - `num_results` (int, optional): Number of search results to retrieve (default is 10).
 
+### CLI Usage
+
+You can use the `google-opensearch` command line tool to perform Google searches:
+```python
+google-search "cyber security" --num_results 5
+```
+### Docker Container Usage
+
+You can use the `google-opensearch-api` Docker container to perform Google searches:
+
+```cmd
+docker run -it --rm google-opensearch-api "cyber security" --num_results 5
+```
+
 ### Output
 
 The `google_search` method returns a JSON string containing search results and metadata:
