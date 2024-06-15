@@ -24,7 +24,9 @@ jobs:
 
     - name: Extract version from setup.py
       id: get_version
-      run: echo ::set-output name=version::$(python -c "import re; with open('setup.py', 'r') as f: version = re.search(r'__version__ = \'([0-9\.]+)\'', f.read()).group(1); print(version)")
+      run: |
+        VERSION=$(python -c "
+        VERSION=$(python -c "import re; with open('setup.py', 'r') as f: version = re.search(r'__version__ = \'([0-9\.]+)\'', f.read()).group(1); print(version)")
 
     - name: Build the Docker image
       id: build
@@ -45,3 +47,4 @@ jobs:
         
         docker push $IMAGE_VERSION
         docker push $IMAGE_LATEST
+
