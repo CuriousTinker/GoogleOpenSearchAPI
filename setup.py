@@ -14,12 +14,12 @@ setup(
         ]
     },
     python_requires='>=3.6',
-    author='Your Name',
-    author_email='your.email@example.com',
+    author='Curious Tinker',
+    author_email='hey.en.nanba@gmail.com',
     description='Python library for fetching and parsing Google search results.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/yourusername/google-search-api',
+    url='https://github.com/CuriousTinker/GoogleSearchAPI',
     license='MIT',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
