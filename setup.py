@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='google-opensearch-api',
-    version='1.0.6',
+    version='1.0.7',
     packages=find_packages(),
     install_requires=[
         'requests',
@@ -10,7 +10,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'google-opensearch-api = google_search_api.google_search_api:main'
+           'google-search=google_search_api.cli:main'
         ]
     },
     python_requires='>=3.6',
