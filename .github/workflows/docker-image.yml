@@ -45,13 +45,3 @@ jobs:
         
         docker push $IMAGE_VERSION
         docker push $IMAGE_LATEST
-
-    - name: Create a new release
-      uses: actions/create-release@v1
-      with:
-        tag_name: ${{ steps.get_version.outputs.version }}
-        release_name: Release ${{ steps.get_version.outputs.version }}
-        body: |
-          This is an automated release generated from the GitHub Actions workflow.
-        draft: false
-        prerelease: false
