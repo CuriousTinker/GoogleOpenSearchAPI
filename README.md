@@ -9,7 +9,7 @@ The **Google Search API Python Module** is a Python library that allows you to f
 You can install the `google-search-api` module using pip:
 
 ```bash
-pip install google-search-api
+pip install google-opensearch-api
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ pip install google-search-api
 ### Basic Example
 
 ```python
-from google_search_api import GoogleSearchAPI
+from google_search_api.google_search_api import GoogleSearchAPI
 
 # Initialize GoogleSearchAPI object
 google_search_api = GoogleSearchAPI()
