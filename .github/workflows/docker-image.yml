@@ -6,6 +6,10 @@ on:
     types:
       - completed
 
+
+env:
+  VERSION: "1.0.13"
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,25 +26,10 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-    - name: Extract version from setup.py
-      id: get_version
-      run: |
-        VERSION=$(python -c "
-        import re
-        with open('setup.py', 'r') as f:
-          content = f.read()
-          version_match = re.search(r'version\s*=\s*["\']([^"\']+)["\']', content)
-          if version_match:
-            version = version_match.group(1)
-            print(version)
-          else:
-          print("Version not found in setup.py")
-        ")
-
     - name: Build the Docker image
       id: build
       run: |
-        VERSION=${{ steps.get_version.outputs.version }}
+
         IMAGE_TAG=curioustinker/google-opensearch-api:$VERSION
         LATEST_TAG=curioustinker/google-opensearch-api:latest
         
