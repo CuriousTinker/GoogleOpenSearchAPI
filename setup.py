@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='google-search-api',
+    name='google-opensearch-api',
     version='1.0.0',
     packages=find_packages(),
     install_requires=[
@@ -10,7 +10,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'google-search-api = google_search_api.google_search_api:main'
+            'google-opensearch-api = google_search_api.google_search_api:main'
         ]
     },
     python_requires='>=3.6',
