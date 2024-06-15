@@ -19,7 +19,7 @@ setup(
     description='Python library for fetching and parsing Google search results.',
     long_description=open('README.md').read(),
     long_description_content_type='text/markdown',
-    url='https://github.com/CuriousTinker/GoogleSearchAPI',
+    url='https://github.com/CuriousTinker/GoogleOpenSearchAPI',
     license='MIT',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
