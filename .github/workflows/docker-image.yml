@@ -22,9 +22,9 @@ jobs:
         username: ${{ secrets.DOCKER_HUB_USERNAME }}
         password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
 
-    - name: Extract version from Git
+    - name: Extract version from setup.py
       id: get_version
-      run: echo ::set-output name=version::$(git describe --tags --abbrev=0)
+      run: echo ::set-output name=version::$(python -c "import re; with open('setup.py', 'r') as f: version = re.search(r'__version__ = \'([0-9\.]+)\'', f.read()).group(1); print(version)")
 
     - name: Build the Docker image
       id: build
@@ -45,3 +45,14 @@ jobs:
         
         docker push $IMAGE_VERSION
         docker push $IMAGE_LATEST
+
+    - name: Create a new release
+      uses: actions/create-release@v1
+      with:
+        tag_name: ${{ steps.get_version.outputs.version }}
+        release_name: Release ${{ steps.get_version.outputs.version }}
+        body: |
+          This is an automated release generated from the GitHub Actions workflow.
+        draft: false
+        prerelease: false
+        token: ${{ secrets.GITHUB_TOKEN }}
