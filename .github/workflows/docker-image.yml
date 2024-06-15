@@ -26,7 +26,16 @@ jobs:
       id: get_version
       run: |
         VERSION=$(python -c "
-        VERSION=$(python -c "import re; with open('setup.py', 'r') as f: version = re.search(r'__version__ = \'([0-9\.]+)\'', f.read()).group(1); print(version)")
+        import re
+        with open('setup.py', 'r') as f:
+          content = f.read()
+          version_match = re.search(r'version\s*=\s*["\']([^"\']+)["\']', content)
+          if version_match:
+            version = version_match.group(1)
+            print(version)
+          else:
+          print("Version not found in setup.py")
+        ")
 
     - name: Build the Docker image
       id: build
