@@ -1,10 +1,10 @@
 name: Docker Image CI
 
-# on:
-#   workflow_run:
-#     workflows: ["Upload Python Package"]
-#     types:
-#       - completed
+on:
+  workflow_run:
+    workflows: ["Upload Python Package"]
+    types:
+      - completed
 
 jobs:
   build:
