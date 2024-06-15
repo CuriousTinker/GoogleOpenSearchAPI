@@ -1,4 +1,4 @@
-# Google Search API Python Module
+# Google Open Search API Python Module
 
 ## Overview
 
@@ -6,7 +6,7 @@ The **Google Search API Python Module** is a Python library that allows you to f
 
 ## Installation
 
-You can install the `google-search-api` module using pip:
+You can install the `google-opensearch-api` module using pip:
 
 ```bash
 pip install google-opensearch-api

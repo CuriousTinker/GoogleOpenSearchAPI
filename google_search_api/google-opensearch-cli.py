@@ -1,6 +1,6 @@
 # google-opensearch-cli.py
 import argparse
-from google_search_api import GoogleSearchAPI
+from .google_search_api import GoogleSearchAPI
 
 def main():
     # Set up argument parser
